@@ -4,17 +4,6 @@ import {get, ref, set} from "firebase/database";
 
 export const Controls = () => {
 
-  const buttonList = [
-    {
-      name: 'Next',
-      action: 'next'
-    },
-    {
-      name: 'Previous',
-      action: 'previous'
-    }
-  ]
-
   const handleNextSlide = async () => {
 
     // Increment the current slide
