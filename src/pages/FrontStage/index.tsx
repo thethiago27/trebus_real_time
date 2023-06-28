@@ -31,7 +31,7 @@ export const FrontStage = () => {
     };
   }, []);
 
-  const lastThreeReactions = reactions.slice(-3); // Get the last 3 reactions
+  const lastThreeReactions = reactions.slice(-3).reverse(); // Get the last 3 reactions
 
   return (
       <div className={styles.frontStageContainer}>
