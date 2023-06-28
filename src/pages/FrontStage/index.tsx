@@ -2,7 +2,7 @@ import { CurrentSlide } from "../../components/CurrentSlide";
 import styles from "./styles.module.scss";
 import { off, onValue, ref } from "firebase/database";
 import { databaseClient } from "../../services/firebase.ts";
-import { useMemo, useState } from "react";
+import {useEffect, useState} from "react";
 
 interface Reaction {
   nickname: string;
@@ -14,7 +14,7 @@ export const FrontStage = () => {
   const reactionsRef = ref(databaseClient, `reactions/`);
   const [reactions, setReactions] = useState<Reaction[]>([]);
 
-  useMemo(() => {
+  useEffect(() => {
     onValue(reactionsRef, (snapshot) => {
       const data = snapshot.val();
 
