@@ -1,3 +1,4 @@
+import lamina_0 from "../../assets/slides/lamina_0.png";
 import lamina_1 from "../../assets/slides/lamina_1.png";
 import lamina_2 from "../../assets/slides/lamina_2.png";
 import lamina_3 from "../../assets/slides/lamina_3.png";
@@ -21,6 +22,7 @@ import andre from "../../assets/speaker_image/andre.png";
 
 
 export const slides = [
+  { lamina: lamina_0, speaker: "Thiago Rodrigues", speaker_image: thiago },
   { lamina: lamina_1, speaker: "Thiago Rodrigues", speaker_image: thiago },
   { lamina: lamina_2, speaker: "Thiago Rodrigues", speaker_image: thiago },
   { lamina: lamina_3, speaker: "Thiago Rodrigues", speaker_image: thiago },
