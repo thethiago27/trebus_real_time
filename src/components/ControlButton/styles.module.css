@@ -1,0 +1,12 @@
+.control {
+    width: 100%;
+    height: 50vh;
+    background-color: #d63031;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green-500: #015F43;
+  --gray-900: #121214;
+  --gray-800: #29292E;
+  --gray-300: #C4C4CC;
+}
+
+:focus {
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--green-500);
+}
+
+body {
+  background: var(--gray-900);
+  color: var(--gray-300);
+  font: 400 16px 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font-family: "Poppins", sans-serif;
+}
+

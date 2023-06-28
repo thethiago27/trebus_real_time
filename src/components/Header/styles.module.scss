@@ -1,0 +1,25 @@
+.defaultHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  flex-basis: initial;
+  border-bottom: 2px solid #424242;
+
+  .userCounter {
+    background: var(--green-500);
+    gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 1.125rem;
+    font-family: "Roboto Mono", monospace;
+  }
+
+  img {
+    width: 8rem;
+    height: 8rem;
+  }
+}
