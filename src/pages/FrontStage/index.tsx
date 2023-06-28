@@ -33,13 +33,31 @@ export const FrontStage = () => {
 
   const lastThreeReactions = reactions.slice(-3).reverse(); // Get the last 3 reactions
 
+  function componentToHex(componente: number) {
+    const hex = componente.toString(16);
+    return hex.length === 1 ? "0" + hex : hex;
+  }
+  const gerarCorHex = (): string => {
+    // Gerar três valores de cor aleatórios (R, G, B)
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    // Converter os valores para o formato hexadecimal
+    const corHex = "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+
+    return corHex;
+  }
+
   return (
       <div className={styles.frontStageContainer}>
         <CurrentSlide className={styles.slide} />
         <div className={styles.footer}>
           <div className={styles.comments}>
             {lastThreeReactions.map((reaction) => (
-                <div key={reaction.id} className={styles.reaction}>
+                <div key={reaction.id} className={styles.reaction} style={{
+                  backgroundColor: gerarCorHex()
+                }}>
                   <p className={styles.nickname}>{reaction.nickname} disse:</p>
                   <p>{reaction.reaction}</p>
                 </div>
