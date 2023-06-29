@@ -1,5 +1,5 @@
-import {slides} from "../SlideScreen/slides.ts";
-import {usePresentation} from "../../hook/usePresentation.tsx";
+import {slides} from "../SlideScreen/slides";
+import {usePresentation} from "../../hook/usePresentation";
 
 interface CurrentSlideProps {
   className?: string;

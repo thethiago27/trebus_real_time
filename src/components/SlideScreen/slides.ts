@@ -19,23 +19,74 @@ import thiago from "../../assets/speaker_image/thiago.png";
 import gabriel from "../../assets/speaker_image/gabriel.png";
 import andre from "../../assets/speaker_image/andre.png";
 
+type Speaker = {
+  name: string;
+  image: string;
+}
 
+type Slides = {
+  lamina: any | string;
+  speaker: Speaker;
+}
 
-export const slides = [
-  { lamina: lamina_0, speaker: "Thiago Rodrigues", speaker_image: thiago },
-  { lamina: lamina_1, speaker: "Thiago Rodrigues", speaker_image: thiago },
-  { lamina: lamina_2, speaker: "Thiago Rodrigues", speaker_image: thiago },
-  { lamina: lamina_3, speaker: "Thiago Rodrigues", speaker_image: thiago },
-  { lamina: lamina_4, speaker: "Thiago Rodrigues", speaker_image: thiago },
-  { lamina: lamina_5, speaker: "Thiago Rodrigues", speaker_image: thiago },
-  { lamina: lamina_6, speaker: "André Luiz", speaker_image: andre },
-  { lamina: lamina_7, speaker: "André Luiz", speaker_image: andre },
-  { lamina: lamina_8, speaker: "André Luiz", speaker_image: andre },
-  { lamina: lamina_9, speaker: "Gabriel Erick", speaker_image: andre },
-  { lamina: lamina_10, speaker: "Gabriel Erick", speaker_image: gabriel },
-  { lamina: lamina_11, speaker: "Gabriel Erick", speaker_image: gabriel },
-  { lamina: lamina_12, speaker: "Gabriel Erick", speaker_image: gabriel },
-  { lamina: lamina_13, speaker: "João", speaker_image: "imagem_13.jpg" },
-  { lamina: lamina_14, speaker: "Thiago Rodrigues", speaker_image: thiago },
-  { lamina: lamina_15, speaker: "Thiago Rodrigues", speaker_image: thiago },
+const speakers: Speaker[] = [
+  {name: "Thiago Rodrigues", image: thiago},
+  {name: "André Luiz", image: andre},
+  {name: "Gabriel", image: gabriel},
 ];
+
+const laminas: string[] = [
+  lamina_0,
+  lamina_1,
+  lamina_2,
+  lamina_3,
+  lamina_4,
+  lamina_5,
+  lamina_6,
+  lamina_7,
+  lamina_8,
+  lamina_9,
+  lamina_10,
+  lamina_11,
+  lamina_12,
+  lamina_13,
+  lamina_14,
+  lamina_15
+];
+
+const getCurrentSpeaker = (i: number): Speaker => {
+
+  const speaker: Speaker = {
+    name: "",
+    image: ""
+  }
+
+  if (i < 6) {
+    speaker.name = speakers[0].name;
+    speaker.image = speakers[0].image;
+  } else if (i < 9) {
+    speaker.name = speakers[2].name;
+    speaker.image = speakers[2].image;
+  } else if (i < 11) {
+    speaker.name = speakers[1].name;
+    speaker.image = speakers[1].image;
+  } else if (i === 13) {
+    speaker.name = "João";
+    speaker.image = "imagem_13.jpg";
+  } else {
+    speaker.name = speakers[0].name;
+    speaker.image = speakers[0].image;
+  }
+
+  return speaker;
+
+}
+
+
+export const slides: Slides[] = laminas.map((lamina, i) => {
+  return {
+    lamina,
+    speaker: getCurrentSpeaker(i)
+  }
+});
+
