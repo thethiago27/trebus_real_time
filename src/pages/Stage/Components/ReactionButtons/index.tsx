@@ -1,7 +1,15 @@
 import styles from "./styles.module.scss";
 import { ref, update, push, child } from "firebase/database";
-import {getNickname} from "../../../../services/registration.ts";
-import {databaseClient} from "../../../../services/firebase.ts";
+import {getNickname} from "../../../../services/registration";
+import {databaseClient} from "../../../../services/firebase";
+
+type Reaction = {
+  [key: string]: {
+    reaction: string;
+    nickname: null | string;
+    createdAt: string;
+  }
+}
 
 export const ReactionButtons = () => {
 
@@ -13,7 +21,7 @@ export const ReactionButtons = () => {
         child(ref(databaseClient), `reactions`)
     ).key;
 
-    const reactionObj: any = {}
+    const reactionObj: Reaction = {}
 
     reactionObj[`/reactions/${newReactionKey}`] = {
       reaction,

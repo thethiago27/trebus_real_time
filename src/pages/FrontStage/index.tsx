@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import { off, onValue, ref } from "firebase/database";
 import { databaseClient } from "../../services/firebase.ts";
 import {useEffect, useState} from "react";
+import {ReactionBox} from "./Components/ReactionBox";
 
 interface Reaction {
   nickname: string;
@@ -39,10 +40,7 @@ export const FrontStage = () => {
         <div className={styles.footer}>
           <div className={styles.comments}>
             {lastThreeReactions.map((reaction) => (
-                <div key={reaction.id} className={styles.reaction}>
-                  <p className={styles.nickname}>{reaction.nickname} disse:</p>
-                  <p>{reaction.reaction}</p>
-                </div>
+                <ReactionBox key={reaction.id} {...reaction} />
             ))}
           </div>
         </div>

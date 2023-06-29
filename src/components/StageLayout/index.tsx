@@ -4,7 +4,7 @@ import {Header} from "../Header";
 import { useLocation } from "react-router-dom";
 import {SlideScreen} from "../SlideScreen";
 
-export const DefaultLayout = () => {
+export const StageLayout = () => {
 
   const location = useLocation();
   const isStage = location.pathname.includes("/stage");
