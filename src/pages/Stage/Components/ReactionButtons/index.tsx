@@ -5,7 +5,7 @@ import {databaseClient} from "../../../../services/firebase.ts";
 
 export const ReactionButtons = () => {
 
-  const reactionList: string[] = ["Trebus é TOP!", "Fechado com Trebus", "Chega de atrasos", "Gleice melhor orientadora"]
+  const reactionList: string[] = ["Trebus é TOP! 🎉", "Fechado com Trebus 😎", "Chega de atrasos 🤬", "Gleice melhor orientadora 🤩"]
 
   const handleReaction = async (reaction: string) => {
 
